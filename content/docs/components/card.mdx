@@ -1,0 +1,111 @@
+---
+title: Card
+description: コンテンツをグループ化するカードコンポーネント
+---
+
+# Card
+
+コンテンツをグループ化するためのカードコンポーネントです。ヘッダー、コンテンツ、フッターセクションを含めることができます。
+
+## インストール
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/card.json
+```
+
+## 使い方
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+
+export default function Example() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>Card Description</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Card Content</p>
+      </CardContent>
+      <CardFooter>
+        <p>Card Footer</p>
+      </CardFooter>
+    </Card>
+  )
+}
+```
+
+## コンポーネント
+
+### Card
+
+カードのルートコンテナです。
+
+### CardHeader
+
+カードのヘッダーセクションです。通常、タイトルと説明を含みます。
+
+### CardTitle
+
+カードのタイトルです。
+
+### CardDescription
+
+カードの説明テキストです。
+
+### CardContent
+
+カードのメインコンテンツエリアです。
+
+### CardFooter
+
+カードのフッターセクションです。アクションボタンなどを配置します。
+
+## 例
+
+### 基本的な使用
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>通知</CardTitle>
+    <CardDescription>最新の通知を確認できます</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>新しい通知はありません</p>
+  </CardContent>
+</Card>
+```
+
+### フォーム付きカード
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>アカウント設定</CardTitle>
+    <CardDescription>プロフィール情報を更新します</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <form>
+      {/* フォームフィールド */}
+    </form>
+  </CardContent>
+  <CardFooter>
+    <Button>保存</Button>
+  </CardFooter>
+</Card>
+```
+
+## 技術的詳細
+
+- Tailwind CSSでスタイリング
+- セマンティックなHTML構造
+- レスポンシブデザイン対応

@@ -1,0 +1,87 @@
+---
+title: Button
+description: 汎用的なボタンコンポーネント
+---
+
+# Button
+
+カスタマイズ可能なボタンコンポーネントです。複数のバリアントとサイズをサポートしています。
+
+## インストール
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/button.json
+```
+
+## 使い方
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export default function Example() {
+  return <Button>Click me</Button>
+}
+```
+
+## バリアント
+
+### Default
+
+```tsx
+<Button variant="default">Default</Button>
+```
+
+### Destructive
+
+```tsx
+<Button variant="destructive">Destructive</Button>
+```
+
+### Outline
+
+```tsx
+<Button variant="outline">Outline</Button>
+```
+
+### Secondary
+
+```tsx
+<Button variant="secondary">Secondary</Button>
+```
+
+### Ghost
+
+```tsx
+<Button variant="ghost">Ghost</Button>
+```
+
+### Link
+
+```tsx
+<Button variant="link">Link</Button>
+```
+
+## サイズ
+
+```tsx
+<Button size="default">Default</Button>
+<Button size="sm">Small</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">
+  <Icon />
+</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| variant | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | ボタンのスタイルバリアント |
+| size | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | ボタンのサイズ |
+| asChild | `boolean` | `false` | Slotコンポーネントとして使用 |
+
+## 技術的詳細
+
+- Radix UIの`@radix-ui/react-slot`を使用
+- `class-variance-authority`でバリアント管理
+- Tailwind CSSでスタイリング

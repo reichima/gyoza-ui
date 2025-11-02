@@ -1,0 +1,74 @@
+---
+title: インストール
+description: Gyoza UIコンポーネントの導入方法
+---
+
+# インストール
+
+Gyoza UIコンポーネントをプロジェクトに導入する方法を説明します。
+
+## 前提条件
+
+以下がインストールされている必要があります：
+
+- Node.js 18以上
+- React 18以上
+- Tailwind CSS
+
+## CLIでのインストール
+
+### 1. shadcn CLIのインストール
+
+```bash
+npm install -g shadcn
+```
+
+### 2. コンポーネントのインストール
+
+個別のコンポーネントをインストールできます：
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/button.json
+```
+
+### 3. 複数のコンポーネントを一度にインストール
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/button.json
+npx shadcn@latest add https://your-registry-url.com/r/card.json
+npx shadcn@latest add https://your-registry-url.com/r/input.json
+```
+
+## 手動インストール
+
+CLIを使わずに手動でインストールすることもできます。
+
+### 1. ファイルをダウンロード
+
+各コンポーネントのソースコードをダウンロードして、プロジェクトの `components` フォルダに配置します。
+
+### 2. 依存関係をインストール
+
+コンポーネントに必要な依存パッケージをインストールします：
+
+```bash
+npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge
+```
+
+### 3. ユーティリティ関数を追加
+
+`lib/utils.ts` に以下を追加：
+
+```typescript
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+## 次のステップ
+
+- [コンポーネント一覧](/docs/components)を確認
+- [使い方](/docs/usage)を学ぶ

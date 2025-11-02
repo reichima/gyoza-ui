@@ -1,0 +1,10 @@
+{
+  "title": "ドキュメント",
+  "pages": [
+    "index",
+    "installation",
+    "components",
+    "components/button",
+    "components/card"
+  ]
+}
