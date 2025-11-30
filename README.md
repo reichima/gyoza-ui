@@ -21,3 +21,39 @@ This is a template for creating a custom registry using Next.js.
 ## Documentation
 
 Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+
+## Development
+
+### Code Quality
+
+This project uses [Biome](https://biomejs.dev/) for linting and formatting.
+
+#### Available Scripts
+
+```bash
+# Format code
+pnpm format
+
+# Check formatting without writing
+pnpm format:check
+
+# Lint code
+pnpm lint:biome
+
+# Lint and fix
+pnpm lint:biome:fix
+
+# Run all checks (format + lint)
+pnpm check
+
+# Run all checks and fix
+pnpm check:fix
+```
+
+#### VS Code Integration
+
+The Biome VS Code extension is recommended and will be suggested when you open the project. With the extension installed:
+
+- Code will be automatically formatted on save
+- Imports will be automatically organized on save
+- Linting errors will be shown inline
