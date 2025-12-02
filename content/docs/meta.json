@@ -5,6 +5,7 @@
     "installation",
     "components",
     "components/button",
-    "components/card"
+    "components/card",
+    "components/marquee"
   ]
 }

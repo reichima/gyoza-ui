@@ -1,6 +1,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { Marquee, MarqueeItem } from "@/registry/ui/marquee"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <nav>
             <ul className="flex gap-6 text-sm font-medium">
               <li><Link href="/docs" className="hover:text-slate-600 transition-colors">ドキュメント</Link></li>
+              <li><Link href="/demo" className="hover:text-slate-600 transition-colors">デモ</Link></li>
               <li><Link href="https://github.com/reichima/gyoza-ui" className="hover:text-slate-600 transition-colors">GitHub</Link></li>
             </ul>
           </nav>
@@ -29,41 +31,78 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-white">
-          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                餃子のように包み込む、<br className="hidden md:block" />
-                <span className="text-slate-600">優しいUIコンポーネント</span>
-              </h1>
-              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                システム開発のために設計された、ヘッドレスでアクセシブルなReactコンポーネントライブラリ。
-                あなたのプロジェクトを優しく包み込みます。
-              </p>
-              <div className="flex gap-4 pt-4">
-                <Link
-                  href="/docs"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-slate-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
-                >
-                  はじめる
-                </Link>
-                <Link
-                  href="https://github.com/reichima/gyoza-ui"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-slate-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
-                >
-                  GitHub
-                </Link>
+        <section className="h-[calc(100vh-4rem)] bg-white flex flex-col">
+          <div className="flex-1 flex items-center py-20 md:py-32">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1.5 space-y-6">
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                  餃子のように包み込む、<br className="hidden md:block" />
+                  <span className="text-slate-600">優しいUIコンポーネント</span>
+                </h1>
+                <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+                  システム開発のために設計された、ヘッドレスでアクセシブルなReactコンポーネントライブラリ。
+                  あなたのプロジェクトを優しく包み込みます。
+                </p>
+                <div className="flex gap-4 pt-4">
+                  <Link
+                    href="/docs"
+                    className="inline-flex h-12 items-center justify-center rounded-md bg-slate-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
+                  >
+                    はじめる
+                  </Link>
+                  <Link
+                    href="/demo"
+                    className="inline-flex h-12 items-center justify-center rounded-md border border-slate-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
+                  >
+                    デモを見る
+                  </Link>
+                  <Link
+                    href="https://github.com/reichima/gyoza-ui"
+                    className="inline-flex h-12 items-center justify-center rounded-md border border-slate-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
+                  >
+                    GitHub
+                  </Link>
+                </div>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <Image
+                  src="/gyoza.png"
+                  alt="Gyoza UIのコンセプトイメージ"
+                  width={600}
+                  height={400}
+                  className="rounded-lg"
+                />
               </div>
             </div>
-            <div className="flex-1 flex justify-center">
-              {/* 仮画像: ヒーローイメージ */}
-              <img
-                src="/gyoza.png"
-                alt="Gyoza UIのコンセプトイメージ"
-                width={600}
-                height={400}
-                className="rounded-lg"
-              />
+          </div>
+
+          {/* Marquee Section - お知らせ/ハイライト */}
+          <div className="py-8 bg-gradient-to-r from-slate-900 to-slate-700 text-white overflow-hidden">
+            <div className="container mx-auto px-4">
+              <Marquee pauseOnHover className="[--duration:25s]" fade>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium">Gyoza UI</span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🚀</span>
+                    <span className="text-sm font-medium">Next.js 15 & React 19対応</span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🎨</span>
+                    <span className="text-sm font-medium">Tailwind CSS & CSS Modules両対応</span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium">TypeScriptで型安全な開発体験</span>
+                  </div>
+                </MarqueeItem>
+              </Marquee>
             </div>
           </div>
         </section>
