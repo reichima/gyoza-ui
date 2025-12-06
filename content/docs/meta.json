@@ -6,6 +6,7 @@
     "components",
     "components/button",
     "components/card",
-    "components/marquee"
+    "components/marquee",
+    "components/popover"
   ]
 }
