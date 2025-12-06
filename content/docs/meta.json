@@ -4,6 +4,7 @@
     "index",
     "installation",
     "components",
+    "components/accordion",
     "components/button",
     "components/card",
     "components/dialog",
