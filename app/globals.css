@@ -120,3 +120,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide unwanted banner above Home */
+div.bg-fd-secondary\/50.p-3.empty\:hidden {
+  display: none !important;
+}
