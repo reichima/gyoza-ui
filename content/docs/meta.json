@@ -6,6 +6,7 @@
     "components",
     "components/accordion",
     "components/button",
+    "components/combobox",
     "components/card",
     "components/dialog",
     "components/marquee",
