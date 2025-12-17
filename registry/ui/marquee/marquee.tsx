@@ -1,6 +1,5 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import "./marquee.css"
 
 interface MarqueeProps extends React.ComponentProps<"div"> {
   /**
@@ -100,16 +99,12 @@ function Marquee({
           key={index}
           className={cn(
             "flex shrink-0",
-            isVertical ? "flex-col" : "flex-row",
-            isVertical ? "animate-marquee-vertical" : "animate-marquee",
-            isReverse && (isVertical ? "[animation-direction:reverse]" : "[animation-direction:reverse]"),
+            isVertical ? "flex-col animate-[marquee-vertical_var(--duration)_linear_infinite]" : "flex-row animate-[marquee_var(--duration)_linear_infinite]",
+            isReverse && "[animation-direction:reverse]",
             pauseOnHover && "group-hover:[animation-play-state:paused]",
             pauseOnFocus && "group-focus-within:[animation-play-state:paused]",
             respectReducedMotion && "motion-reduce:animate-none"
           )}
-          style={{
-            animationDuration: "var(--duration)",
-          }}
           aria-hidden={index > 0 ? "true" : undefined}
         >
           {children}

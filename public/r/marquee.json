@@ -10,10 +10,6 @@
       "type": "registry:ui"
     },
     {
-      "path": "registry/ui/marquee/marquee.css",
-      "type": "registry:ui"
-    },
-    {
       "path": "registry/ui/marquee/index.ts",
       "type": "registry:ui"
     }

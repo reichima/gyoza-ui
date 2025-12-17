@@ -63,15 +63,11 @@
     {
       "name": "example-with-css",
       "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
+      "title": "Example with Tailwind",
+      "description": "A login form with Tailwind.",
       "files": [
         {
           "path": "registry/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/blocks/example-with-css/example-card.css",
           "type": "registry:component"
         }
       ]

@@ -136,7 +136,7 @@ export default function Home() {
                 <MarqueeItem>
                   <div className="flex items-center gap-3 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full">
                     <span className="text-2xl">🎨</span>
-                    <span className="text-sm font-semibold">Tailwind CSS & CSS Modules</span>
+                    <span className="text-sm font-semibold">Tailwind</span>
                   </div>
                 </MarqueeItem>
                 <MarqueeItem>
@@ -173,7 +173,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-3 text-soft-amber-900">ヘッドレス設計</h3>
                 <p className="text-soft-amber-700 leading-relaxed">
                   スタイルを持たないヘッドレスコンポーネントとして提供。
-                  Tailwind CSSはもちろん、CSS Modulesへの置き換えもスムーズに行えます。
+                  Tailwindでカスタマイズ可能です。
                 </p>
               </div>
 
