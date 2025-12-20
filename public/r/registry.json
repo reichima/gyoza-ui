@@ -83,6 +83,18 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "typing",
+      "type": "registry:ui",
+      "title": "Typing",
+      "description": "タイピング効果を実現するアニメーションコンポーネント",
+      "files": [
+        {
+          "path": "registry/ui/typing.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

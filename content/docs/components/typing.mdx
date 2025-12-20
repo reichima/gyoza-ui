@@ -1,0 +1,262 @@
+---
+title: Typing
+description: タイピング効果を実現するアニメーションコンポーネント
+---
+
+import { Typing } from "@/registry/ui/typing";
+
+# Typing
+
+テキストが一文字ずつタイプされるように表示されるアニメーションコンポーネントです。ユーザーの注目を集める効果的なUI表現として利用できます。
+
+## デモ
+
+### 基本的な使い方
+
+<div className="my-6 p-6 border rounded-lg bg-card">
+  <Typing>こんにちは、世界! Typingコンポーネントへようこそ。</Typing>
+</div>
+
+### 速度のバリエーション
+
+<div className="my-6 space-y-4">
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">高速 (speed=50)</p>
+    <Typing speed={50}>高速タイピングのデモです</Typing>
+  </div>
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">通常 (speed=100)</p>
+    <Typing speed={100}>通常速度のタイピングです</Typing>
+  </div>
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">低速 (speed=200)</p>
+    <Typing speed={200}>ゆっくりとしたタイピング</Typing>
+  </div>
+</div>
+
+### スタイルのカスタマイズ
+
+<div className="my-6 space-y-4">
+  <div className="p-6 border rounded-lg bg-card">
+    <Typing className="text-2xl font-bold text-primary">
+      大きく太い文字でタイピング
+    </Typing>
+  </div>
+  <div className="p-6 border rounded-lg bg-card">
+    <Typing className="text-sm text-muted-foreground italic">
+      小さく控えめなタイピング
+    </Typing>
+  </div>
+  <div className="p-6 border rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
+    <Typing className="text-white font-semibold">
+      背景とコントラストのあるタイピング
+    </Typing>
+  </div>
+</div>
+
+### カーソルのカスタマイズ
+
+<div className="my-6 space-y-4">
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">カーソルなし</p>
+    <Typing showCursor={false}>カーソルが表示されません</Typing>
+  </div>
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">カスタムカーソル</p>
+    <Typing cursorClassName="bg-primary h-6 w-1">
+      カスタマイズされたカーソル
+    </Typing>
+  </div>
+</div>
+
+### 遅延開始
+
+<div className="my-6 space-y-4">
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">1秒後に開始</p>
+    <Typing delay={1}>1秒待ってから表示されます</Typing>
+  </div>
+  <div className="p-4 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">2秒後に開始</p>
+    <Typing delay={2}>2秒待ってから表示されます</Typing>
+  </div>
+</div>
+
+### 画面内表示の検知
+
+デフォルトでは、要素が画面内に入ってからタイピングが開始されます。スクロールして確認してください。
+
+<div className="my-6 space-y-[800px]">
+  <div className="p-6 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">この要素は最初から見えています</p>
+    <Typing>すぐに開始されます</Typing>
+  </div>
+  <div className="p-6 border rounded-lg bg-card">
+    <p className="text-xs text-muted-foreground mb-2">スクロールして画面内に入ると開始されます</p>
+    <Typing>画面に入ってから表示されます!</Typing>
+  </div>
+</div>
+
+### 即座に開始
+
+`startOnView={false}`を設定すると、画面内検知を無効化できます。
+
+<div className="my-6 p-6 border rounded-lg bg-card">
+  <Typing startOnView={false}>
+    画面の外でも即座に開始されます
+  </Typing>
+</div>
+
+## インストール
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/typing.json
+```
+
+## 使い方
+
+### 基本的な使い方
+
+```tsx
+import { Typing } from "@/components/ui/typing"
+
+export default function Example() {
+  return <Typing>こんにちは、世界!</Typing>
+}
+```
+
+### 速度のカスタマイズ
+
+`speed`プロパティでタイピング速度(ミリ秒)を調整できます。
+
+```tsx
+<Typing speed={50}>高速タイピング</Typing>
+<Typing speed={200}>低速タイピング</Typing>
+```
+
+### 開始遅延
+
+`delay`プロパティでタイピング開始前の遅延時間(秒)を設定できます。
+
+```tsx
+<Typing delay={1}>1秒後に開始</Typing>
+<Typing delay={2}>2秒後に開始</Typing>
+```
+
+### カーソルの非表示
+
+`showCursor`プロパティでカーソルの表示/非表示を切り替えられます。
+
+```tsx
+<Typing showCursor={false}>カーソルなし</Typing>
+```
+
+### カーソルのカスタマイズ
+
+`cursorClassName`プロパティでカーソルのスタイルをカスタマイズできます。
+
+```tsx
+<Typing cursorClassName="bg-primary h-6 w-3">
+  カスタムカーソル
+</Typing>
+```
+
+### 完了時のコールバック
+
+`onComplete`プロパティでタイピング完了時の処理を実行できます。
+
+```tsx
+<Typing onComplete={() => console.log("完了!")}>
+  タイピング完了時に処理を実行
+</Typing>
+```
+
+### 画面内表示の検知
+
+デフォルトでは、要素が画面内に入ってからタイピングが開始されます。
+
+```tsx
+// デフォルト: 画面内に入ってから開始
+<Typing>画面に入ってから表示されます</Typing>
+
+// 即座に開始
+<Typing startOnView={false}>すぐに開始します</Typing>
+
+// しきい値をカスタマイズ (0.0 ~ 1.0)
+<Typing threshold={0.5}>要素の50%が見えたら開始</Typing>
+```
+
+### スタイルのカスタマイズ
+
+`className`プロパティでテキストのスタイルをカスタマイズできます。
+
+```tsx
+<Typing className="text-2xl font-bold text-primary">
+  大きく太い文字
+</Typing>
+```
+
+## 複合的な例
+
+```tsx
+"use client"
+
+import * as React from "react"
+import { Typing } from "@/components/ui/typing"
+
+export default function ComplexExample() {
+  const [showNext, setShowNext] = React.useState(false)
+
+  return (
+    <div className="space-y-4">
+      <Typing
+        speed={80}
+        delay={0.5}
+        onComplete={() => setShowNext(true)}
+        className="text-lg"
+      >
+        最初のメッセージ
+      </Typing>
+      {showNext && (
+        <Typing speed={60} className="text-muted-foreground">
+          次のメッセージ
+        </Typing>
+      )}
+    </div>
+  )
+}
+```
+
+## プロパティ
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| `children` | `React.ReactNode` | - | 表示するテキスト(必須) |
+| `speed` | `number` | `100` | タイピング速度(ミリ秒) |
+| `delay` | `number` | `0` | タイピング開始前の遅延時間(秒) |
+| `showCursor` | `boolean` | `true` | カーソルを表示するかどうか |
+| `cursorClassName` | `string` | - | カーソルのカスタムクラス名 |
+| `onComplete` | `() => void` | - | タイピング完了時のコールバック |
+| `startOnView` | `boolean` | `true` | 画面内に入ってからタイピングを開始するかどうか |
+| `threshold` | `number` | `0.1` | Intersection Observerのしきい値 (0.0 ~ 1.0) |
+| `className` | `string` | - | コンテナのカスタムクラス名 |
+
+## アクセシビリティ
+
+このコンポーネントは以下のアクセシビリティ機能を備えています:
+
+- `role="status"`: 動的コンテンツの状態変更を示します
+- `aria-live="polite"`: スクリーンリーダーに対して、適切なタイミングで更新を通知します
+- `aria-atomic="true"`: 要素全体を一つの単位として読み上げます
+- カーソルには`aria-hidden="true"`を設定し、装飾的な要素として扱います
+
+## パフォーマンス
+
+- **Intersection Observer API**: 画面内検知機能により、画面外の要素は処理されないため、パフォーマンスが最適化されます
+- **メモリ効率**: コンポーネントがアンマウントされると、すべてのタイマーとオブザーバーが自動的にクリーンアップされます
+
+## 使用上の注意
+
+- 長文のタイピングアニメーションは、ユーザー体験を損なう可能性があります。適切な長さとスピードを選択してください
+- アニメーションをスキップするオプションの提供を検討してください
+- モーションを好まないユーザーのために、`prefers-reduced-motion`メディアクエリへの対応も検討できます

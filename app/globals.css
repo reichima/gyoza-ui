@@ -380,3 +380,13 @@ div.bg-fd-secondary\/50.p-3.empty\:hidden {
 .link-warm:hover::after {
   width: 100%;
 }
+
+/* Typing cursor blink animation */
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
