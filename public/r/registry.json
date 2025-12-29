@@ -72,18 +72,7 @@
         }
       ]
     },
-    {
-      "name": "marquee",
-      "type": "registry:ui",
-      "title": "Marquee",
-      "description": "スクロールするコンテンツを表示するマーキーコンポーネント",
-      "files": [
-        {
-          "path": "registry/ui/marquee.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
+    
     {
       "name": "typing",
       "type": "registry:ui",
