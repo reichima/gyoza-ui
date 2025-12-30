@@ -1,7 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Marquee, MarqueeItem } from "@/registry/ui/marquee"
 import { GithubIcon } from "@/components/github-icon"
 
 export default function Home() {
@@ -121,32 +120,6 @@ export default function Home() {
               className="w-full h-auto"
               aria-hidden="true"
             />
-          </div>
-
-          {/* Marquee Section */}
-          <div className="py-6 overflow-hidden relative z-10 bg-soft-amber-200">
-            <div className="container mx-auto px-6">
-              <Marquee pauseOnHover className="[--duration:30s]" fade>
-                <MarqueeItem>
-                  <div className="flex items-center gap-3 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full">
-                    <span className="text-2xl">🥟</span>
-                    <span className="text-sm font-semibold">Gyoza UI</span>
-                  </div>
-                </MarqueeItem>
-                <MarqueeItem>
-                  <div className="flex items-center gap-3 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full">
-                    <span className="text-2xl">🎨</span>
-                    <span className="text-sm font-semibold">Tailwind</span>
-                  </div>
-                </MarqueeItem>
-                <MarqueeItem>
-                  <div className="flex items-center gap-3 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full">
-                    <span className="text-2xl">♿</span>
-                    <span className="text-sm font-semibold">アクセシビリティ対応</span>
-                  </div>
-                </MarqueeItem>
-              </Marquee>
-            </div>
           </div>
         </section>
 
