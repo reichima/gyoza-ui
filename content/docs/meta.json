@@ -10,7 +10,6 @@
     "components/card",
     "components/dialog",
     "components/marquee",
-    "components/popover",
-    "components/typing"
+    "components/popover"
   ]
 }
