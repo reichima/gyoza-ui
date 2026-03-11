@@ -147,6 +147,18 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "use-postal-code",
+      "type": "registry:hook",
+      "title": "usePostalCode",
+      "description": "郵便番号から住所を自動取得するhook。zipcloud APIを使用。",
+      "files": [
+        {
+          "path": "registry/hooks/use-postal-code.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
