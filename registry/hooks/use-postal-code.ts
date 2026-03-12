@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 
 interface PostalCodeResult {
   address: string
@@ -9,6 +9,7 @@ interface PostalCodeResult {
 
 export const usePostalCode = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const abortControllerRef = useRef<AbortController | null>(null)
 
   const fetchAddress = useCallback(async (postalCode: string): Promise<PostalCodeResult> => {
     // ハイフンを除去して7桁の数字かチェック
@@ -17,10 +18,16 @@ export const usePostalCode = () => {
       return { address: "", error: false }
     }
 
+    // 前回のリクエストが進行中であればキャンセルする
+    abortControllerRef.current?.abort()
+    const controller = new AbortController()
+    abortControllerRef.current = controller
+
     setIsLoading(true)
     try {
       const response = await fetch(
-        `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${cleanedCode}`
+        `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${cleanedCode}`,
+        { signal: controller.signal }
       )
       const result = await response.json()
 
@@ -31,10 +38,16 @@ export const usePostalCode = () => {
       }
       return { address: "", error: false }
     } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return { address: "", error: false }
+      }
       console.error("Failed to fetch address:", error)
       return { address: "", error: true }
     } finally {
-      setIsLoading(false)
+      // キャンセルされていない（=最新の）リクエストのみ isLoading を解除する
+      if (!controller.signal.aborted) {
+        setIsLoading(false)
+      }
     }
   }, [])
 
