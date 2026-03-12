@@ -12,14 +12,17 @@ export const usePostalCode = () => {
   const abortControllerRef = useRef<AbortController | null>(null)
 
   const fetchAddress = useCallback(async (postalCode: string): Promise<PostalCodeResult> => {
+    // 前回のリクエストが進行中であればキャンセルする
+    abortControllerRef.current?.abort()
+    abortControllerRef.current = null
+
     // ハイフンを除去して7桁の数字かチェック
     const cleanedCode = postalCode.replace(/-/g, "")
     if (!/^\d{7}$/.test(cleanedCode)) {
+      setIsLoading(false)
       return { address: "", error: false }
     }
 
-    // 前回のリクエストが進行中であればキャンセルする
-    abortControllerRef.current?.abort()
     const controller = new AbortController()
     abortControllerRef.current = controller
 
