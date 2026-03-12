@@ -47,7 +47,7 @@ export const usePostalCode = () => {
       console.error("Failed to fetch address:", error)
       return { address: "", error: true }
     } finally {
-      // キャンセルされていない（=最新の）リクエストのみ isLoading を解除する
+      // 最新のリクエストのみ isLoading を解除する
       if (!controller.signal.aborted) {
         setIsLoading(false)
       }
