@@ -1,0 +1,47 @@
+---
+title: Sign In Card
+description: メール・パスワード認証とソーシャルログインを備えたサインインカードコンポーネント
+---
+
+# Sign In Card
+
+メールアドレス・パスワードによる認証フォームと、Google・GitHubのソーシャルログインボタンを備えたサインインカードです。Zodによるバリデーション付き。
+
+## インストール
+
+```bash
+npx shadcn@latest add https://your-registry-url.com/r/sign-in-card.json
+```
+
+## 使い方
+
+```tsx
+import { SignInCard } from "@/components/sign-in-card"
+
+export default function LoginPage() {
+  return <SignInCard />
+}
+```
+
+## 機能
+
+- メールアドレス・パスワードのバリデーション（Zod）
+- Googleログインボタン
+- GitHubログインボタン
+- ローディング状態の管理
+- エラーメッセージの表示
+- レスポンシブデザイン
+
+## 依存コンポーネント
+
+- [Card](/docs/components/card)
+- [Button](/docs/components/button)
+- [Input](/docs/components/input)
+- [Label](/docs/components/label)
+
+## 技術的詳細
+
+- Zodによるフォームバリデーション
+- ネイティブフォームハンドリング（react-hook-form不要）
+- インラインSVGアイコン（外部アイコンライブラリ不要）
+- Tailwind CSSでスタイリング

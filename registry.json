@@ -159,6 +159,20 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "sign-in-card",
+      "type": "registry:component",
+      "title": "Sign In Card",
+      "description": "A sign-in card with email/password form and social login buttons.",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "card"],
+      "files": [
+        {
+          "path": "registry/blocks/sign-in-card/sign-in-card.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
