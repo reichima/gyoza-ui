@@ -1,59 +1,85 @@
-# registry-template
+# Gyoza UI
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+shadcn/ui ベースのカスタムコンポーネントレジストリです。
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+https://reichima.github.io/gyoza-ui
 
-## Getting Started
+## コンポーネントのインストール
 
-This is a template for creating a custom registry using Next.js.
-
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
-
-## Documentation
-
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
-
-## Development
-
-### Code Quality
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting.
-
-#### Available Scripts
+任意のプロジェクトから `shadcn` CLI でコンポーネントを追加できます。
 
 ```bash
-# Format code
-pnpm format
-
-# Check formatting without writing
-pnpm format:check
-
-# Lint code
-pnpm lint:biome
-
-# Lint and fix
-pnpm lint:biome:fix
-
-# Run all checks (format + lint)
-pnpm check
-
-# Run all checks and fix
-pnpm check:fix
+npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/<コンポーネント名>.json
 ```
 
-#### VS Code Integration
+### 利用可能なコンポーネント
 
-The Biome VS Code extension is recommended and will be suggested when you open the project. With the extension installed:
+| コンポーネント | コマンド |
+|---|---|
+| Button | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/button.json` |
+| Card | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/card.json` |
+| Input | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/input.json` |
+| Label | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/label.json` |
+| Textarea | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/textarea.json` |
+| Select | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/select.json` |
+| Dialog | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/dialog.json` |
+| Accordion | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/accordion.json` |
+| Combobox | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/combobox.json` |
+| Popover | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/popover.json` |
+| Tooltip | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/tooltip.json` |
+| Sign In Card | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/sign-in-card.json` |
 
-- Code will be automatically formatted on save
-- Imports will be automatically organized on save
-- Linting errors will be shown inline
+## 開発
+
+```bash
+# 依存関係のインストール
+pnpm install
+
+# 開発サーバー起動
+pnpm dev
+```
+
+### コード品質
+
+[Biome](https://biomejs.dev/) を使用しています。
+
+```bash
+pnpm format        # フォーマット
+pnpm format:check  # フォーマットチェック
+pnpm lint:biome    # リント
+pnpm check         # フォーマット + リント
+pnpm check:fix     # 自動修正
+```
+
+## ビルド・デプロイ
+
+### レジストリのビルド
+
+`registry.json` からコンポーネントJSONを `public/r/` に生成します。
+
+```bash
+pnpm registry:build
+```
+
+### 静的ビルド
+
+```bash
+pnpm build
+```
+
+### デプロイ
+
+`main` ブランチにプッシュすると GitHub Actions で自動デプロイされます。
+
+手動デプロイは GitHub の Actions タブから「Run workflow」で実行できます。
+
+> GitHub リポジトリの Settings > Pages で Source を「GitHub Actions」に設定してください。
+
+## 技術スタック
+
+- [Next.js](https://nextjs.org/) 16
+- [React](https://react.dev/) 19
+- [Tailwind CSS](https://tailwindcss.com/) v4
+- [shadcn/ui](https://ui.shadcn.com/) レジストリ
+- [fumadocs](https://fumadocs.vercel.app/) ドキュメント
+- [GitHub Pages](https://pages.github.com/) ホスティング
