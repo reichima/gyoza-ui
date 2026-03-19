@@ -2,32 +2,32 @@
 
 shadcn/ui ベースのカスタムコンポーネントレジストリです。
 
-https://reichima.github.io/gyoza-ui
+https://gyoza-ui.reichima.com
 
 ## コンポーネントのインストール
 
 任意のプロジェクトから `shadcn` CLI でコンポーネントを追加できます。
 
 ```bash
-npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/<コンポーネント名>.json
+npx shadcn@latest add https://gyoza-ui.reichima.com/r/<コンポーネント名>.json
 ```
 
 ### 利用可能なコンポーネント
 
 | コンポーネント | コマンド |
 |---|---|
-| Button | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/button.json` |
-| Card | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/card.json` |
-| Input | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/input.json` |
-| Label | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/label.json` |
-| Textarea | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/textarea.json` |
-| Select | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/select.json` |
-| Dialog | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/dialog.json` |
-| Accordion | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/accordion.json` |
-| Combobox | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/combobox.json` |
-| Popover | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/popover.json` |
-| Tooltip | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/tooltip.json` |
-| Sign In Card | `npx shadcn@latest add https://reichima.github.io/gyoza-ui/r/sign-in-card.json` |
+| Button | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/button.json` |
+| Card | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/card.json` |
+| Input | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/input.json` |
+| Label | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/label.json` |
+| Textarea | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/textarea.json` |
+| Select | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/select.json` |
+| Dialog | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/dialog.json` |
+| Accordion | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/accordion.json` |
+| Combobox | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/combobox.json` |
+| Popover | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/popover.json` |
+| Tooltip | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/tooltip.json` |
+| Sign In Card | `npx shadcn@latest add https://gyoza-ui.reichima.com/r/sign-in-card.json` |
 
 ## 開発
 

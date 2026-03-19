@@ -1,11 +1,12 @@
 import { createMDX } from 'fumadocs-mdx/next';
 import type { NextConfig } from 'next';
 
-/** @type {NextConfig} */
 const config: NextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "/gyoza-ui",
+  images: {
+    unoptimized: true,
+  },
 };
 
 const withMDX = createMDX();
