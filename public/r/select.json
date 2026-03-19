@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:ui",
+  "title": "Select",
+  "description": "A customizable select component using appearance: base-select.",
+  "files": [
+    {
+      "path": "registry/ui/select.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {}\n\nconst Select = React.forwardRef<HTMLSelectElement, SelectProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <select\n        ref={ref}\n        className={cn(\n          \"flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1\",\n          // Base select appearance for customization\n          \"appearance-none\", \n          // Note: 'appearance: base-select' is experimental and might need specific browser flags or versions.\n          // We use a class that would apply this if supported, or inline style if needed.\n          // For now, we'll use a custom class 'appearance-base-select' which users can define or we can add to global css if needed,\n          // but for this component we'll assume the user's environment supports it or it falls back.\n          // However, to make it work as a \"Customizable Select\" as per the article, we need `appearance: base-select`.\n          // Since tailwind might not have this utility yet, we can use arbitrary values or style prop.\n          \"[appearance:base-select]\",\n          className\n        )}\n        {...props}\n      />\n    )\n  }\n)\nSelect.displayName = \"Select\"\n\nconst SelectOption = React.forwardRef<\n  HTMLOptionElement,\n  React.OptionHTMLAttributes<HTMLOptionElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <option\n      ref={ref}\n      className={cn(\n        \"flex cursor-default items-center justify-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n})\nSelectOption.displayName = \"SelectOption\"\n\nexport { Select, SelectOption }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

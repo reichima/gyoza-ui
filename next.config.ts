@@ -4,6 +4,7 @@ import type { NextConfig } from 'next';
 /** @type {NextConfig} */
 const config: NextConfig = {
   reactStrictMode: true,
+  output: "export",
 };
 
 const withMDX = createMDX();

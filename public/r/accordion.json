@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:ui",
+  "title": "Accordion",
+  "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/accordion.tsx",
+      "content": "import * as React from \"react\"\nimport { ChevronDown } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {\n  type?: \"single\" | \"multiple\"\n  collapsible?: boolean\n}\n\nconst Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(\n  ({ className, type, collapsible, ...props }, ref) => (\n    <div ref={ref} className={cn(\"space-y-1\", className)} {...props} />\n  )\n)\nAccordion.displayName = \"Accordion\"\n\nconst AccordionItem = React.forwardRef<\n  HTMLDetailsElement,\n  React.DetailsHTMLAttributes<HTMLDetailsElement>\n>(({ className, ...props }, ref) => (\n  <details\n    ref={ref}\n    className={cn(\n      \"group border-b last:border-b-0\",\n      className\n    )}\n    {...props}\n  />\n))\nAccordionItem.displayName = \"AccordionItem\"\n\nconst AccordionTrigger = React.forwardRef<\n  HTMLElement,\n  React.HTMLAttributes<HTMLElement>\n>(({ className, children, ...props }, ref) => (\n  <summary\n    ref={ref}\n    className={cn(\n      \"flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline cursor-pointer [&::-webkit-details-marker]:hidden list-none\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n    <ChevronDown className=\"h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180\" />\n  </summary>\n))\nAccordionTrigger.displayName = \"AccordionTrigger\"\n\nconst AccordionContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, children, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\n      \"overflow-hidden text-sm transition-all animate-accordion-down\",\n      className\n    )}\n    {...props}\n  >\n    <div className=\"pb-4 pt-0\">{children}</div>\n  </div>\n))\nAccordionContent.displayName = \"AccordionContent\"\n\nexport { Accordion, AccordionItem, AccordionTrigger, AccordionContent }\n",
+      "type": "registry:ui"
+    }
+  ]
+}
