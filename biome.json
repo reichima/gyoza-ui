@@ -1,13 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.8/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
@@ -15,14 +13,14 @@
       "style": {
         "useConst": "error",
         "useTemplate": "warn",
-        "noVar": "error",
         "noNonNullAssertion": "warn",
         "useImportType": "error",
         "useSelfClosingElements": "error"
       },
       "suspicious": {
         "noExplicitAny": "warn",
-        "noArrayIndexKey": "warn"
+        "noArrayIndexKey": "warn",
+        "noVar": "error"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn",
@@ -35,8 +33,10 @@
         "useKeyWithMouseEvents": "error",
         "noAccessKey": "error",
         "noAriaUnsupportedElements": "error",
-        "noBlankTarget": "error",
         "useValidAnchor": "error"
+      },
+      "security": {
+        "noBlankTarget": "error"
       }
     }
   },
@@ -59,19 +59,19 @@
     }
   },
   "files": {
-    "ignore": [
-      "node_modules",
-      ".next",
-      "out",
-      "coverage",
-      "dist",
-      "build",
-      "*.min.js",
-      "*.config.js",
-      "*.config.mjs",
-      "*.config.ts",
-      "pnpm-lock.yaml",
-      "public"
+    "includes": [
+      "!node_modules",
+      "!.next",
+      "!out",
+      "!coverage",
+      "!dist",
+      "!build",
+      "!*.min.js",
+      "!*.config.js",
+      "!*.config.mjs",
+      "!*.config.ts",
+      "!pnpm-lock.yaml",
+      "!public"
     ]
   }
 }
