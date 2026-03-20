@@ -69,9 +69,9 @@ export default function Home() {
               {/* Hero Content */}
               <div className="flex-1 space-y-8">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                  餃子のように包み込む、
+                  Wrap it like gyoza.
                   <br className="hidden md:block" />
-                  <span className="text-soft-amber-600">優しいUIコンポーネント</span>
+                  <span className="text-soft-amber-600">Crispy outside. Juicy inside.</span>
                 </h1>
                 
                 <p className="text-lg text-soft-amber-800 max-w-xl leading-relaxed">
