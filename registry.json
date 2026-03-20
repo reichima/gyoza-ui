@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "gyoza-ui",
+  "homepage": "https://gyoza-ui.reichima.com",
   "items": [
     {
       "name": "hello-world",
@@ -157,6 +157,68 @@
         {
           "path": "registry/hooks/use-postal-code.ts",
           "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "汎用的なボタンコンポーネント。複数のバリアントとサイズをサポート。",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "コンテンツをグループ化するカードコンポーネント。",
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "テキスト入力フィールドコンポーネント。",
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "フォーム要素のラベルコンポーネント。",
+      "dependencies": ["@radix-ui/react-label"],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "複数行のテキスト入力コンポーネント。",
+      "files": [
+        {
+          "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui"
         }
       ]
     },

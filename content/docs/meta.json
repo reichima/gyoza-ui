@@ -6,10 +6,12 @@
     "components",
     "components/accordion",
     "components/button",
-    "components/combobox",
     "components/card",
+    "components/combobox",
     "components/dialog",
-    "components/marquee",
-    "components/popover"
+    "components/popover",
+    "components/select",
+    "components/sign-in-card",
+    "components/tooltip"
   ]
 }
